@@ -1,4 +1,4 @@
-# % Last Change: Tue Feb 20 01:55:25 PM 2018 CST
+# % Last Change: Wed Feb 21 11:10:24 AM 2018 CST
 # Base Image
 FROM debian:9
 
@@ -75,12 +75,12 @@ RUN conda install -c bioconda bcftools=1.6 && \
 	conda install -c bioconda samtools=1.7 && \
 	conda install -c bioconda sbt=0.13.12 && \
 	conda install -c bioconda vcftools=0.1.15 && \
-	conda install -c anaconda biopython ipython matplotlib numpy pandas scikit-learn scipy seaborn && \ 
+	conda install -c conda-forge biopython ipython matplotlib numpy pandas scikit-learn scipy seaborn && \ 
 #	conda update conda && \
 	conda clean --all --yes
 
 # bwa 0.7.17, fastqc 0.11.7, bam-readcount 0.8 need perl 5.22.0
-#conda install -c conda-forge biopython ipython matplotlib numpy pandas scikit-learn scipy seaborn && \ 
+#conda install -c anaconda biopython ipython matplotlib numpy pandas scikit-learn scipy seaborn && \ 
 #RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 ubuntu
 #USER ubuntu # create new user
 
