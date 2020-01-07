@@ -1,4 +1,4 @@
-# % Last Change: Mon Jan 06 11:46:57 PM 2020 CST
+# % Last Change: Tue Jan 07 12:12:28 AM 2020 CST
 # Base Image
 FROM continuumio/miniconda3:4.7.12
 
@@ -16,8 +16,7 @@ RUN conda install -c bioconda bcftools && \
 	conda install -c bioconda bedtools && \
 	conda install -c bioconda htslib && \
 	conda install -c bioconda samtools && \
-	conda install -c bioconda ucsc-bedsort && \
-	conda clean --all --yes
+	conda install -c bioconda ucsc-bedsort
 
 # set timezone
 RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
