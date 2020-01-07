@@ -1,6 +1,6 @@
-# % Last Change: Tue Jan 07 12:52:12 AM 2020 CST
+# % Last Change: Tue Jan 07 01:14:25 AM 2020 CST
 # Base Image
-FROM continuumio/miniconda3:4.5.12
+FROM continuumio/miniconda3:4.7.12
 
 # Metadata
 LABEL software="genomic data analysis" \
@@ -10,6 +10,8 @@ LABEL software="genomic data analysis" \
 	license="https://github.com/litd/dana" \
 	tags="Genomics" \
 	maintainer="Tiandao Li <litd99@gmail.com>"
+
+ENV PATH /opt/conda/bin:$PATH
 
 # Installation
 RUN conda install -c bioconda bcftools && \
@@ -21,8 +23,6 @@ RUN conda install -c bioconda bcftools && \
 WORKDIR /opt/conda/bin
 RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedSort
 RUN chmod +x bedSort
-
-ENV PATH /opt/conda/bin:$PATH
 
 # set timezone
 RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
