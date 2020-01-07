@@ -1,4 +1,4 @@
-# % Last Change: Tue Jan 07 12:25:20 AM 2020 CST
+# % Last Change: Tue Jan 07 12:52:12 AM 2020 CST
 # Base Image
 FROM continuumio/miniconda3:4.5.12
 
@@ -16,7 +16,13 @@ RUN conda install -c bioconda bcftools && \
 	conda install -c bioconda bedtools && \
 	conda install -c bioconda htslib && \
 	conda install -c bioconda samtools && \
-	conda install -c bioconda ucsc-bedsort
+	conda clean --all --yes
+
+WORKDIR /opt/conda/bin
+RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedSort
+RUN chmod +x bedSort
+
+ENV PATH /opt/conda/bin:$PATH
 
 # set timezone
 RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
