@@ -1,6 +1,6 @@
-# % Last Change: Tue Jan 07 01:14:25 AM 2020 CST
+# % Last Change: Tue Jan 07 10:59:37 AM 2020 CST
 # Base Image
-FROM continuumio/miniconda3:4.7.12
+FROM continuumio/miniconda3:4.7.12-alpine
 
 # Metadata
 LABEL software="genomic data analysis" \
@@ -28,5 +28,5 @@ RUN chmod +x bedSort
 RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
 	echo "America/Chicago" > /etc/timezone
 
-CMD [ "/bin/bash" ]
+CMD [ "/bin/sh" ]
 
