@@ -1,4 +1,4 @@
-# % Last Change: Mon Jan 06 11:11:42 PM 2020 CST
+# % Last Change: Mon Jan 06 11:46:57 PM 2020 CST
 # Base Image
 FROM continuumio/miniconda3:4.7.12
 
@@ -23,6 +23,5 @@ RUN conda install -c bioconda bcftools && \
 RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
 	echo "America/Chicago" > /etc/timezone
 
-ENTRYPOINT [ "/usr/bin/tini", "--" ]
 CMD [ "/bin/bash" ]
 
