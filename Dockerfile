@@ -1,6 +1,6 @@
-# % Last Change: Tue Jan 07 12:12:28 AM 2020 CST
+# % Last Change: Tue Jan 07 12:25:20 AM 2020 CST
 # Base Image
-FROM continuumio/miniconda3:4.7.12
+FROM continuumio/miniconda3:4.5.12
 
 # Metadata
 LABEL software="genomic data analysis" \
