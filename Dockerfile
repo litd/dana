@@ -1,4 +1,4 @@
-# % Last Change: Tue Jan 07 10:59:37 AM 2020 CST
+# % Last Change: Tue Jan 07 11:09:54 AM 2020 CST
 # Base Image
 FROM continuumio/miniconda3:4.7.12-alpine
 
@@ -24,9 +24,9 @@ WORKDIR /opt/conda/bin
 RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedSort
 RUN chmod +x bedSort
 
-# set timezone
-RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
-	echo "America/Chicago" > /etc/timezone
+# set timezone, debian and ubuntu
+#RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && \
+#	echo "America/Chicago" > /etc/timezone
 
 CMD [ "/bin/sh" ]
 
